@@ -1,16 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+const HeaderComponent = () => (
+  <header className="heading">
+    <h1>Namaste React Header component using Functional component</h1>
+  </header>
+);
+
+const BodyComponent = () => (
+  <div className="container">
+    <span>body area</span>
+  </div>
+);
+
+const FooterComponent = () => <footer>Learning Namaste React.</footer>;
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const heading = React.createElement("h1", {}, "I'm h1 tag");
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I'm h1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I'm h1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag"),
-  ]),
-]);
-root.render(parent);
+root.render(
+  <div>
+    <HeaderComponent />
+    <BodyComponent />
+    <FooterComponent />
+  </div>
+);
