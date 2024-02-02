@@ -3,9 +3,9 @@ import resObj from "../../utils/demoData";
 
 const BodyComponent = () => {
     return (
-      <div className="body-area" style={{ display: "flex" }}>
+      <div className="body-area row">
         {resObj.map((restro) => (
-          <RestaurantCards restroData={restro} />
+            <RestaurantCards key={restro?.id?.id} restroData={restro} />
         ))}
       </div>
     );

@@ -6,8 +6,8 @@ const RestaurantCards = (props) => {
       restroData?.info;
   
     return (
-      <div className="">
-        <div className="col card mr-2 ml-2">
+      <div className="col-md-3">
+        <div className="card">
           <img
             width="70"
             height="70"
