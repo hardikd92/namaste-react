@@ -1,4 +1,4 @@
-const resObj = [
+const restroList = [
   {
     info: {
       id: "76396",
@@ -1317,4 +1317,4 @@ const resObj = [
   },
 ];
 
-export default resObj;
+export default restroList;
