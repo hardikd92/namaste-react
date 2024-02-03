@@ -4,17 +4,16 @@ const RestaurantCards = (props) => {
     const restroData = props?.restroData;
     const { name, cloudinaryImageId, cuisines, sla, avgRatingString } =
       restroData?.info;
-  
+    const imageLink = RES_CARD_LOG_CND + cloudinaryImageId;
     return (
       <div className="col-md-3">
         <div className="card">
           <img
             width="70"
             height="70"
-            src={ RES_CARD_LOG_CND + cloudinaryImageId }
-            className="card-img-top"
+            className=""
             alt="..."
-            style={{ width: "85px", margin: "0px auto" }}
+            src={ RES_CARD_LOG_CND + cloudinaryImageId }
           />
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
