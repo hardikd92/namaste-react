@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RestaurantCards from "./RestaurantCards";
 import restroList from "../../utils/demoData";
+import { BASE_API } from "../../utils/constants";
 
 const BodyComponent = () => {
-  const [restrosList, setRestroList] = useState(restroList);
+  const [restrosList, setRestroList] = useState([]);
+  useEffect(() => {
+    fetchApiData();
+  }, []);
 
+  const fetchApiData = async () => {
+    const data = await fetch(BASE_API);
+    const json = await data.json();
+    console.log(json);
+    setRestroList(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
   return (
     <div className="body-area">
       <div className="filterArea">
