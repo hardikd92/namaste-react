@@ -6,10 +6,11 @@ const BodyComponent = () => {
   const [restrosList, setRestroList] = useState(restroList);
 
   return (
-    <div className="body-area row">
+    <div className="body-area">
       <div className="filterArea">
         {/*Top rated Restaurant filter button*/}
         <button
+          className="btn btn-primary  m-1"
           type="button"
           onClick={() => {
             const filterRestorsList = restrosList.filter(
@@ -22,6 +23,7 @@ const BodyComponent = () => {
         </button>
         {/* Lowest Delivery Time Filter Button */}
         <button
+          className="btn btn-primary  m-1"
           type="button"
           onClick={() => {
             const filterRestorsList = restrosList.filter(
@@ -34,6 +36,7 @@ const BodyComponent = () => {
         </button>
         {/* Only Veg Filter Button */}
         <button
+          className="btn btn-success  m-1"
           type="button"
           onClick={() => {
             const filterRestorsList = restrosList.filter(
@@ -46,6 +49,7 @@ const BodyComponent = () => {
         </button>
         {/* Reset Filter Button */}
         <button
+          className="btn btn-warning  m-1"
           type="button"
           onClick={() => {
             setRestroList(restroList);
@@ -54,10 +58,11 @@ const BodyComponent = () => {
           Reset Filter
         </button>
       </div>
-
-      {restrosList.map((restro) => (
-        <RestaurantCards key={restro?.id?.id} restroData={restro} />
-      ))}
+      <div className="restaurant-cards row">
+        {restrosList.map((restro) => (
+          <RestaurantCards key={restro?.id?.id} restroData={restro} />
+        ))}
+      </div>
     </div>
   );
 };

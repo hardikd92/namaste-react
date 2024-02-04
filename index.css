@@ -1,0 +1,17 @@
+.restaurant-card .card .card-img
+{
+    margin: 0px auto;
+    width: 250px;
+    height: 200px;
+}
+.restaurant-card .card .list-group .list-group-item,
+.restaurant-card .card .card-body .card-text
+{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.restaurant-card .card:hover{
+    border: 1px solid green;
+    font-weight: 600;
+}
