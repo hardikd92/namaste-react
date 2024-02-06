@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import RestaurantCards from "./RestaurantCards";
 import restroList from "../../utils/demoData";
 import { BASE_API } from "../../utils/constants";
+import Shimmer from "./layout/Shimmer";
 
 const BodyComponent = () => {
   const [restrosList, setRestroList] = useState([]);
@@ -17,7 +18,15 @@ const BodyComponent = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-  return (
+  return restrosList.length === 0 ? (
+    <div style={{ display: "flex" }}>
+      <Shimmer />
+      <Shimmer />
+      <Shimmer />
+      <Shimmer />
+      <Shimmer />
+    </div>
+  ) : (
     <div className="body-area">
       <div className="filterArea">
         {/*Top rated Restaurant filter button*/}
