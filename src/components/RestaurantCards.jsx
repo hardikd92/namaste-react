@@ -1,8 +1,9 @@
 import { RES_CARD_LOG_CND } from "../../utils/constants";
+import { Link } from "react-router-dom";
 
 const RestaurantCards = (props) => {
   const restroData = props?.restroData;
-  const { name, cloudinaryImageId, cuisines, sla, avgRatingString } =
+  const { id, name, cloudinaryImageId, cuisines, sla, avgRatingString } =
     restroData?.info;
   const imageLink = RES_CARD_LOG_CND + cloudinaryImageId;
   return (
@@ -24,9 +25,9 @@ const RestaurantCards = (props) => {
           </li>
         </ul>
         <div className="card-body">
-          <a href="#" className="card-link">
+          <Link to={"/" + id} className="card-link">
             Order Now
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -2,26 +2,38 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HeaderComponent from "./components/layout/Header";
 import BodyComponent from "./components/Body";
 import ErrorComponent from "./components/ErrorComponent";
+import RestaurantDetails from "./components/RestaurantDetails";
 
 const AppLayoutComponent = () => {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <BodyComponent />,
-      errorElement: <ErrorComponent />,
-    },
-  ]);
   return (
     <div className="app container-fluid">
       <HeaderComponent />
-      <RouterProvider router={router} />
+      <Outlet />
     </div>
   );
 };
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayoutComponent />,
+    children: [
+      {
+        path: "/",
+        element: <BodyComponent />,
+      },
+      {
+        path: "/:id",
+        element: <RestaurantDetails />,
+      },
+    ],
+    errorElement: <ErrorComponent />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayoutComponent />);
+root.render(<RouterProvider router={router} />);

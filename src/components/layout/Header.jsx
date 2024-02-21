@@ -1,12 +1,13 @@
 import { LOGO_CND } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 const HeaderComponent = () => {
   return (
     <header className="header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img width="70" height="70" src={LOGO_CND} alt="hamburger" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,9 +21,9 @@ const HeaderComponent = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-item nav-link active" href="/">
+            <Link to="/" className="nav-item nav-link active">
               Home <span className="sr-only"></span>
-            </a>
+            </Link>
             <a className="nav-item nav-link" href="#">
               Features
             </a>
