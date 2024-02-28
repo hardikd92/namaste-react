@@ -24,9 +24,9 @@ const HeaderComponent = () => {
             <Link to="/" className="nav-item nav-link active">
               Home <span className="sr-only"></span>
             </Link>
-            <a className="nav-item nav-link" href="#">
-              Features
-            </a>
+            <Link to="/about" className="nav-item nav-link">
+              About
+            </Link>
             <a className="nav-item nav-link" href="#">
               Pricing
             </a>

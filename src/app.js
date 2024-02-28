@@ -7,6 +7,7 @@ import HeaderComponent from "./components/layout/Header";
 import BodyComponent from "./components/Body";
 import ErrorComponent from "./components/ErrorComponent";
 import RestaurantDetails from "./components/RestaurantDetails";
+import About from "./components/About";
 
 const AppLayoutComponent = () => {
   return (
@@ -29,6 +30,16 @@ const router = createBrowserRouter([
       {
         path: "/:id",
         element: <RestaurantDetails />,
+      },
+      {
+        path: "/about",
+        element: (
+          <About
+            name={"Hardik Bhatia"}
+            location={"Vadodara"}
+            techstack={"React, NodeJs, ExpressJs, Next.Js, MongoDB"}
+          />
+        ),
       },
     ],
     errorElement: <ErrorComponent />,

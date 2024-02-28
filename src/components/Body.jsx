@@ -8,15 +8,15 @@ const BodyComponent = () => {
   const [restrosList, setRestroList] = useState([]);
   const [filteredRestrosList, setfilteredRestrosList] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-
+  console.log("Body Component before useEffects....");
   useEffect(() => {
+    console.log("Body Component inside useEffects....");
     fetchApiData();
   }, []);
 
   const fetchApiData = async () => {
     const data = await fetch(BASE_API);
     const json = await data.json();
-    console.log(json);
     setRestroList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
