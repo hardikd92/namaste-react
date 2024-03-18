@@ -119,7 +119,7 @@ const BodyComponent = () => {
       </div>
       <div className="restaurant-cards row">
         {filteredRestrosList.map((restro) => (
-          <RestaurantCards key={restro?.id?.id} restroData={restro} />
+          <RestaurantCards key={restro?.id} restroData={restro} />
         ))}
       </div>
     </div>
